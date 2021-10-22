@@ -1,13 +1,13 @@
 from checkcel import Checkplate
-from checkcel.validators import DateValidator, NoValidator, SetValidator, IntValidator
+from checkcel.validators import DateValidator, NoValidator, UniqueValidator, SetValidator, IntValidator
 from collections import OrderedDict
 
 
 class MyTemplate(Checkplate):
     empty_ok = True
     validators = OrderedDict([
-        ("Population name", NoValidator()),
-        ("Sampling date", DateValidator()),
+        ("Population name", UniqueValidator()),
+        ("Sampling date", DateValidator(empty_ok=False)),
         ("Collector", NoValidator()),
         ("Country", SetValidator(empty_ok=False, valid_values=["Algeria", "Egypt", "France", "Italy", "Slovenia", "Tunisia", "Spain"])),
         ("Region", NoValidator()),
@@ -15,7 +15,7 @@ class MyTemplate(Checkplate):
         ("Locality", NoValidator()),
         ("Town", NoValidator()),
         ("GPS", NoValidator()),
-        ("Altitude", IntValidator(empty_ok=True)),
+        ("Altitude", IntValidator(min=0)),
         ("Place (#1)", SetValidator(valid_values=["Family garden", "market", "field", "private collection", "other"])),
         ("Origin (#2)", NoValidator()),
         ("Source (#3)", SetValidator(valid_values=["Friends", "neighbors", "parents", "exchange", "purchase", "market", "seed merchant", "other"])),
@@ -29,8 +29,8 @@ class MyTemplate(Checkplate):
         ("Conservation duration (#8)", IntValidator(min=1, max=7)),
         ("storage conditions (#8)", NoValidator()),
         ("Importance (#9)", SetValidator(valid_values=["rare", "infrequent", "frequent", "abundant"])),
-        ("Sowing date (#10)", DateValidator(empty_ok=True)),
-        ("Harvest date (#11)", DateValidator(empty_ok=True)),
+        ("Sowing date (#10)", DateValidator()),
+        ("Harvest date (#11)", DateValidator()),
         ("Irrigation (#12)", NoValidator()),
         ("Informant (#13)", NoValidator()),
         ("Human food (#14)", SetValidator(valid_values=["no", "yes", ""])),
