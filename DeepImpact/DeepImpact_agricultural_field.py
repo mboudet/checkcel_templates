@@ -6,7 +6,7 @@ from collections import OrderedDict
 class MyTemplate(Checkplate):
     validators = OrderedDict([
         ("Agricultural field", UniqueValidator()),
-        ("Crop", SetValidator(valid_values=['Wheat', 'Colza'])),
+        ("Crop", SetValidator(valid_values=['Wheat', 'Rapeseed'])),
         ("Region", SetValidator(valid_values=['West', 'East', 'North', 'South'])),
         ("Locality", NoValidator()),
         ("GPS", NoValidator()),
