@@ -1,5 +1,5 @@
 from checkcel import Checkplate
-from checkcel.validators import DateValidator, NoValidator, UniqueValidator, SetValidator, IntValidator
+from checkcel.validators import DateValidator, NoValidator, UniqueValidator, SetValidator, IntValidator, GPSValidator
 from collections import OrderedDict
 
 
@@ -14,7 +14,7 @@ class MyTemplate(Checkplate):
         ("Province", NoValidator()),
         ("Locality", NoValidator()),
         ("Town", NoValidator()),
-        ("GPS", NoValidator()),
+        ("GPS", GPSValidator()),
         ("Altitude", IntValidator(min=0)),
         ("Place (#1)", SetValidator(valid_values=["family garden", "market", "field", "private collection", "other"])),
         ("Origin (#2)", NoValidator()),
