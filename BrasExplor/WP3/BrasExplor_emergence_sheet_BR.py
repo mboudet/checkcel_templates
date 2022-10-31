@@ -15,5 +15,5 @@ class MyTemplate(Checkplate):
         ("Cotyledon stage field agent", TextValidator()),
         ("3-5 leaves stage date", DateValidator()),
         ("3-5 leaves stage seedling number", IntValidator()),
-        ("3-5 leaves stage field agent", TextValidator())
+        ("3-5 leaves stage field agent", TextValidator()),
     ])
