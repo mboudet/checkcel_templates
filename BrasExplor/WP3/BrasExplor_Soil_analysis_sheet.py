@@ -1,11 +1,11 @@
 from checkcel import Checkplate
-from checkcel.validators import FloatValidator, NoValidator, TextValidator, DateValidator
+from checkcel.validators import FloatValidator, TextValidator, DateValidator, SetValidator
 from collections import OrderedDict
 
 
 class MyTemplate(Checkplate):
     validators = OrderedDict([
-        ("Experimental site", NoValidator()),
+        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Site1 Algeria", "Site2 Algeria", "Tunisia", "Slovenia", "Italy"])),
         ("Sampling date", DateValidator()),
         ("Analysis date", DateValidator()),
         ("N", FloatValidator()),

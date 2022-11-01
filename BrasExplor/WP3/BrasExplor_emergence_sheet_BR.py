@@ -1,12 +1,13 @@
 from checkcel import Checkplate
-from checkcel.validators import IntValidator, TextValidator, DateValidator, UniqueValidator
+from checkcel.validators import IntValidator, TextValidator, DateValidator, UniqueValidator, SetValidator
 from collections import OrderedDict
 
 
 class MyTemplate(Checkplate):
     validators = OrderedDict([
-        ("Derived Population", UniqueValidator()),
-        ("Original Population", UniqueValidator()),
+        ("Id", UniqueValidator()),
+        ("Multiplied Population", TextValidator()),
+        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Site1 Algeria", "Site2 Algeria", "Tunisia", "Slovenia", "Italy"])),
         ("Block", IntValidator(min=1, max=3)),
         ("Sowing date", DateValidator()),
         ("Seed number", IntValidator()),
