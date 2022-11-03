@@ -4,6 +4,7 @@ from collections import OrderedDict
 
 
 class MyTemplate(Checkplate):
+    metadata = ["Submitter", "Submission date", "Version"]
     validators = OrderedDict([
         ("Id", UniqueValidator()),
         ("Multiplied Population", TextValidator()),
