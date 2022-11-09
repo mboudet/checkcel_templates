@@ -11,6 +11,6 @@ class MyTemplate(Checkplate):
         ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Site1 Algeria", "Site2 Algeria", "Tunisia", "Slovenia", "Italy"])),
         ("Block", IntValidator(min=1, max=3)),
         ("Harvest date", DateValidator()),
-        ("Full flowering date", DateValidator()),
         ("Mean seed weight", TextValidator()),
+        ("Picture", TextValidator(empty_ok=True))
     ])
