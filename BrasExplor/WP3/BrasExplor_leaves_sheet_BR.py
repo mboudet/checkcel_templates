@@ -13,7 +13,7 @@ class MyTemplate(Checkplate):
         ("Plant number", IntValidator(min=1, max=5)),
         ("Survey date", DateValidator()),
         ("Leaves number", IntValidator(min=0)),
-        ("Specific surface", FloatValidator(min=0, readme="of 4th fully developped leaf")),
+        ("Specific surface", FloatValidator(min=0, readme="of 4th fully developped leaf (cm²)")),
         ("Fresh leaf weight", FloatValidator(min=0, readme="of 4th fully developped leaf, in grams")),
         ("Dry leaf weight", FloatValidator(min=0, readme="of 4th fully developped leaf, in grams")),
         ("Fresh root weight", FloatValidator(min=0, readme="in grams")),
