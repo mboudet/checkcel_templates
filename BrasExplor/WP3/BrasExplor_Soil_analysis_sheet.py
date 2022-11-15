@@ -6,7 +6,7 @@ from collections import OrderedDict
 class MyTemplate(Checkplate):
     metadata = ["Submitter", "Submission date", "Version"]
     validators = OrderedDict([
-        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Site1 Algeria", "Site2 Algeria", "Tunisia", "Slovenia", "Italy"])),
+        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Alger Algeria", "Bejaia Algeria", "Adrar Algeria", "Tunisia", "Slovenia", "Italy"])),
         ("Sampling date", DateValidator()),
         ("Analysis date", DateValidator()),
         ("N", FloatValidator(min=0)),

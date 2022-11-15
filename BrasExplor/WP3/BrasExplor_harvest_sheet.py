@@ -8,7 +8,7 @@ class MyTemplate(Checkplate):
     validators = OrderedDict([
         ("Id", UniqueValidator()),
         ("Multiplied Population", TextValidator()),
-        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Site1 Algeria", "Site2 Algeria", "Tunisia", "Slovenia", "Italy"])),
+        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Alger Algeria", "Bejaia Algeria", "Adrar Algeria", "Tunisia", "Slovenia", "Italy"])),
         ("Block", IntValidator(min=1, max=3)),
         ("Harvest date", DateValidator()),
         ("Mean seed weight", FloatValidator(min=0)),
