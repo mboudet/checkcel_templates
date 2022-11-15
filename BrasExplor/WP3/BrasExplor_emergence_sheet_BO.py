@@ -9,7 +9,7 @@ class MyTemplate(Checkplate):
         ("Id", UniqueValidator()),
         ("Multiplied Population", TextValidator()),
         ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Site1 Algeria", "Site2 Algeria", "Tunisia", "Slovenia", "Italy"])),
-        ("Greenhouse sowing date", SetValidator()),
+        ("Greenhouse sowing date", DateValidator()),
         ("Seed number", IntValidator(min=0)),
         ("Cotyledon stage date", DateValidator()),
         ("Cotyledon stage seedling number", IntValidator(min=0)),
