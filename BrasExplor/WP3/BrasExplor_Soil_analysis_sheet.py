@@ -7,7 +7,6 @@ class MyTemplate(Checkplate):
     metadata = ["Submitter", "Submission date", "Version"]
     validators = OrderedDict([
         ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Alger Algeria", "Bejaia Algeria", "Adrar Algeria", "Tunisia", "Slovenia", "Italy"])),
-        ("Type", SetValidator(valid_values=['Control', 'Sample'], readme="Whether the population is a control or a sample population")),
         ("Sampling date", DateValidator()),
         ("Analysis date", DateValidator()),
         ("N", FloatValidator(min=0)),
