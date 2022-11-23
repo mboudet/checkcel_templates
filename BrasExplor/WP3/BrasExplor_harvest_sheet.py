@@ -9,6 +9,7 @@ class MyTemplate(Checkplate):
         ("Id", UniqueValidator()),
         ("Multiplied Population", TextValidator()),
         ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Alger Algeria", "Bejaia Algeria", "Adrar Algeria", "Tunisia", "Slovenia", "Italy"])),
+        ("Type", SetValidator(valid_values=['Control', 'Sample'], readme="Whether the population is a control or a sample population")),
         ("Block", IntValidator(min=1, max=3)),
         ("Harvest date", DateValidator()),
         ("Mean seed weight", FloatValidator(min=0)),
