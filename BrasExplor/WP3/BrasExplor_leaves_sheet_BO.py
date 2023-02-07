@@ -5,13 +5,14 @@ from collections import OrderedDict
 
 class MyTemplate(Checkplate):
     metadata = ["Submitter", "Submission date", "Version"]
+    empty_ok = True
     validators = OrderedDict([
-        ("Id", UniqueValidator()),
-        ("Multiplied Population", TextValidator()),
-        ("Experimental site", SetValidator(valid_values=["Le Rheu France", "Ploudaniel France", "Alger Algeria", "Bejaia Algeria", "Adrar Algeria", "Tunisia", "Slovenia", "Italy"])),
-        ("Type", SetValidator(valid_values=['Control', 'Sample'], readme="Whether the population is a control or a sample population")),
-        ("Block", IntValidator(min=1, max=3)),
-        ("Plant number", IntValidator(min=1, max=5)),
+        ("Id", UniqueValidator(empty_ok=False)),
+        ("Multiplied Population", TextValidator(empty_ok=False)),
+        ("Experimental site", SetValidator(empty_ok=False, valid_values=["Le Rheu France", "Ploudaniel France", "Alger Algeria", "Bejaia Algeria", "Adrar Algeria", "Tunisia", "Slovenia", "Italy"])),
+        ("Type", SetValidator(empty_ok=False, valid_values=['Control', 'Sample'], readme="Whether the population is a control or a sample population")),
+        ("Block", IntValidator(empty_ok=False, min=1, max=3)),
+        ("Plant number", IntValidator(empty_ok=False, min=1, max=5)),
         ("Survey date", DateValidator()),
         ("Leaves number", IntValidator(min=0)),
         ("4th leaf specific surface", FloatValidator(min=0, readme="4th fully developped leaf (cm²)")),
